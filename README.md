@@ -6,7 +6,7 @@ Git version control management for [jinitialize](https://github.com/nonetallt/ji
 ```
 git:init [projectDir]
 
-git:set-upstream [remoteUrl]
+git:set-remote [remoteUrl]
 
 git:ignore [entry]
 ```

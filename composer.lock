@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0639f45f445289b9e6bc99bbcf9229eb",
-    "content-hash": "55b54d73dc7a2ed81c3f1e1da099cfcb",
+    "hash": "3d2fb3ad25e0cff46e2fb965faffb654",
+    "content-hash": "75a4dfc4ddc79104cb50d3fc05d4d7e4",
     "packages": [
         {
             "name": "bit3/git-php",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nonetallt/jinitialize-core.git",
-                "reference": "1cf5bff02cfe72766c5e0f4cf1cc010a41d92576"
+                "reference": "1d0c839ba1d849793d2c5b9a9eb04a77762d33d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nonetallt/jinitialize-core/zipball/f0f8d4f453d06e325d7499fb37d68d40b72346c2",
-                "reference": "1cf5bff02cfe72766c5e0f4cf1cc010a41d92576",
+                "url": "https://api.github.com/repos/nonetallt/jinitialize-core/zipball/1d0c839ba1d849793d2c5b9a9eb04a77762d33d7",
+                "reference": "1d0c839ba1d849793d2c5b9a9eb04a77762d33d7",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 }
             ],
             "description": "Core components for jinitialize projects",
-            "time": "2018-06-05 18:42:33"
+            "time": "2018-06-06 12:41:24"
         },
         {
             "name": "psr/log",

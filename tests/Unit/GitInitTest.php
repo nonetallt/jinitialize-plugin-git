@@ -2,19 +2,45 @@
 
 namespace Tests\Unit;
 
+use Tests\Traits\CleansOutput;
 use Nonetallt\Jinitialize\Testing\TestCase;
+use Nonetallt\Jinitialize\Plugin\Git\Commands\GitInit;
 
-class UnitTest extends TestCase
+class GitInitTest extends TestCase
 {
+    use CleansOutput;
 
-    public function testExample()
+    private $output;
+
+    public function testGitFolderIsCreated()
     {
-        $this->assertTrue(true);
+        $this->runCommand("git:init $this->output");
+        $this->assertTrue(is_dir($this->output.'/.git'));
+    }
+
+    public function testRevertRemovesTheCreatedFolder()
+    {
+        $tester = $this->runCommand("git:init $this->output");
+        $command = $tester->getCommand();
+
+        $command->revert();
+        $this->assertFalse(is_dir($this->output.'/.git'));
+    }
+
+    public function testExportsProjectPath()
+    {
+        $tester = $this->runCommand("git:init $this->output");
+        $this->assertContainerContains(['projectPath' => $this->output]);
     }
 
     public function setUp()
     {
         parent::setUp();
         $this->registerLocalPlugin(__DIR__.'/../../composer.json');
+        $this->cleanOutput();
+
+        /* Create subfolder for tests inside output */
+        $this->output = $this->outputFolder('git-test');
+        mkdir($this->output);
     }
 }
