@@ -1,0 +1,47 @@
+{
+    "name": "nonetallt/jinitialize-plugin-git",
+    "description": "Git version control management for jinitialize",
+    "keywords": ["jinitialize", "git", "version control", "automation"],
+    "type": "library",
+    "require": {
+        "php": ">=7.0.0",
+        "nonetallt/jinitialize-core": "dev-master",
+        "symfony/console": "^3.4",
+        "bit3/git-php": "^1.4"
+    },
+    "require-dev": {
+        "phpunit\/phpunit": "^6",
+        "consolidation\/robo": "~1",
+        "henrikbjorn\/lurker": "^1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jyri Mikkola",
+            "email": "jyri.mikkola@pp.inet.fi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Nonetallt\\Jinitialize\\Plugin\\Git\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "jinitialize-plugin": {
+            "name": "git",
+            "commands": [
+            ],
+            "procedures": [
+            ],
+            "settings": [
+            ]
+        }
+    }
+}
