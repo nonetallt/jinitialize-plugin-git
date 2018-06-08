@@ -14,8 +14,8 @@ class GitInit extends JinitializeCommand
     protected function configure()
     {
         $this->setName('init');
-        $this->setDescription('This is an example command');
-        $this->setHelp('Extended description here');
+        $this->setDescription('Initialize a new git project.');
+        $this->setHelp('Run git init in given folder path.');
 
         $this->addArgument('path', InputArgument::REQUIRED, 'Path to the project folder.');
     }
