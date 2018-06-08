@@ -22,7 +22,7 @@ class GitIgnore extends JinitializeCommand
 
     protected function handle($input, $output, $style)
     {
-        $this->path = $this->import('projectPath');
+        $this->path = $this->import('path');
         $this->ignore = $input->getArgument('ignore');
 
         if(is_null($this->path)) $this->abort("Path to git repository must be set.");

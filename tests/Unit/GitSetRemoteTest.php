@@ -15,8 +15,16 @@ class GitSetRemoteTest extends TestCase
     private $git;
     private $output;
 
+    public function testGitFolderDoesNotExistByDefault()
+    {
+        $this->assertFalse(is_dir($this->output.'/.git'));
+    }
+
     public function testRemoteIsNotSetByDefault()
     {
+        $this->runCommand("git:init $this->output");
+
+        /* Note that getNames() will return origin when .git folder does not exist */
         $this->assertEmpty($this->git->remote()->getNames());
     }
 

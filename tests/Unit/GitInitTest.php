@@ -12,6 +12,11 @@ class GitInitTest extends TestCase
 
     private $output;
 
+    public function testGitFolderDoesNotExistByDefault()
+    {
+        $this->assertFalse(is_dir($this->output.'/.git'));
+    }
+
     public function testGitFolderIsCreated()
     {
         $this->runCommand("git:init $this->output");
@@ -30,7 +35,7 @@ class GitInitTest extends TestCase
     public function testExportsProjectPath()
     {
         $tester = $this->runCommand("git:init $this->output");
-        $this->assertContainerContains(['projectPath' => $this->output]);
+        $this->assertContainerContains(['path' => $this->output]);
     }
 
     public function setUp()

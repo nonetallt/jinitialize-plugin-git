@@ -30,7 +30,7 @@ class GitInit extends JinitializeCommand
         $git = new GitRepository($path);
         $git->init()->execute();
 
-        $this->export('projectPath', $this->folder);
+        $this->export('path', $this->folder);
     }
 
     public function revert()
