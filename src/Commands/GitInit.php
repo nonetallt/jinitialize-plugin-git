@@ -26,11 +26,11 @@ class GitInit extends JinitializeCommand
 
         if(! is_dir($path)) $this->abort("Path $path is not a valid folder path");
 
-        $this->folder = $path;
+        $this->folder = $path . '/.git';
         $git = new GitRepository($path);
         $git->init()->execute();
 
-        $this->export('path', $this->folder);
+        $this->export('path', $path);
     }
 
     public function revert()
